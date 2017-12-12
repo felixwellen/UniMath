@@ -8,6 +8,8 @@ Written by: Anders Mörtberg, 2016 (inspired by a remark of Vladimir Voevodsky)
 
 Require Import UniMath.MoreFoundations.Tactics.
 
+Require Import UniMath.Foundations.NaturalNumbers.
+
 Require Import UniMath.Combinatorics.StandardFiniteSets.
 
 Section preamble.
@@ -244,3 +246,13 @@ Corollary weqlistfun {A} n : (iterprod n A) ≃ (stn n -> A).
 Proof.
   exact (weqpair _ (isweqlistfun _)).
 Defined.
+
+
+
+
+(* lists of natural numbers *)
+Section nat_lists.
+
+
+
+End nat_lists.

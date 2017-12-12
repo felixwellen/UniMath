@@ -410,7 +410,7 @@ Definition natlth1tois0 (n : nat) : n < 1 -> n = 0 := nat1gthtois0 _.
 Definition istransnatlth (n m k : nat) : n < m -> m < k -> n < k :=
   λ lnm lmk, istransnatgth _ _ _ lmk lnm.
 
-Definition isirreflnatlth (n : nat) : ¬ (natlth n n) := isirreflnatgth n.
+Definition isirreflnatlth (n : nat) : ¬ (n < n) := isirreflnatgth n.
 
 Notation negnatgthnn := isirreflnatlth.
 
@@ -1841,11 +1841,11 @@ for all pairs (n,m) including pairs of the form (n,0). *)
 
 Definition natdivrem (n m : nat) : dirprod nat nat.
 Proof.
-  intros. induction n as [ | n IHn ].
-  - intros. apply (dirprodpair 0 0).
-  - induction (natlthorgeh (S (pr2 IHn)) m).
-    + apply (dirprodpair (pr1 IHn) (S (pr2 IHn))).
-    + apply (dirprodpair (S (pr1 IHn)) 0).
+  intros. induction n as [ | n' IHn' ].
+  - intros. exact (dirprodpair 0 0).
+  - induction (natlthorgeh (S (pr2 IHn')) m).
+    + apply (dirprodpair (pr1 IHn') (S (pr2 IHn'))).
+    + apply (dirprodpair (S (pr1 IHn')) 0).
 Defined.
 
 Definition natdiv (n m : nat) : nat := pr1 (natdivrem n m).
@@ -1854,6 +1854,9 @@ Definition natrem (n m : nat) : nat := pr2 (natdivrem n m).
 
 Notation " x /+ y " := (natrem x y) (at level 40, left associativity) : nat_scope.
 Notation " x / y " := (natdiv x y) (at level 40, left associativity) : nat_scope.
+
+
+
 
 Lemma lthnatrem (n m : nat) : m ≠ 0 -> n /+ m < m.
 Proof.
