@@ -251,8 +251,11 @@ Defined.
 
 
 (* lists of natural numbers *)
+
+(*
 Section nat_lists.
 
 
 
 End nat_lists.
+*)

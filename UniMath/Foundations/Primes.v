@@ -96,6 +96,8 @@ Eval compute in count_divisors_leq 24 50.
 Eval compute in count_divisors_leq 1 1.
 Eval compute in count_divisors_leq 0 0.
 
+(*
+
 Definition prime (p : nat) : hProp :=
   hProppair (count_divisors_leq p p = 2) (isasetnat (count_divisors_leq p p) 2).
 
@@ -105,3 +107,4 @@ Definition prime_decidable (p : nat) : decidable (prime p).
 Proof.
   intros. apply isdeceqnat.
 Defined.
+ *)
