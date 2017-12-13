@@ -724,7 +724,7 @@ Local Close Scope rig.
 
 
 (** *** Rings *)
-
+(* 'rng' below is an abreviation for 'not necessarily commutative ring'. *)
 
 (** **** General definitions *)
 

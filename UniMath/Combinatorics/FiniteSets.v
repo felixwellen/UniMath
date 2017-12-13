@@ -20,7 +20,7 @@ Unset Automatic Introduction. (* This line has to be removed for the file to com
 
 Require Import UniMath.MoreFoundations.Tactics.
 Require Import UniMath.MoreFoundations.DecidablePropositions.
-Require Export UniMath.Combinatorics.StandardFiniteSets .
+Require Export UniMath.Combinatorics.StandardFiniteSets.
 
 
 
